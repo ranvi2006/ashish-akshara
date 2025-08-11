@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* so children can be positioned relative to it */
+  overflow: hidden;
+}
+
+/* Background video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* push behind all content */
+}
+
+/* Landing */
+.landing {
+  height: 100vh;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.landing-card {
+  background: rgba(255, 246, 248, 0.85); /* transparent overlay */
+  padding: 36px;
+  border-radius: 20px;
+  text-align:center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  max-width: 480px;
+  width: 90%;
+}
+.landing-card h1 { margin: 0 0 8px; font-size: 28px; color: #d63384; }
+.landing-card .sub { margin-bottom: 20px; color:#6c4967; }
+.open-btn {
+  background: linear-gradient(90deg,#ff5f8f,#ff8fb1);
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  font-size: 18px;
+  border-radius: 28px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(214, 34, 121, 0.18);
+}
+
+/* Wish card */
+.wish {
+  width: 100%;
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 40px 20px;
+}
+.wish-card {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255,248,250,0.9);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.wish-card h1 { margin: 0; color:#c81d6f; font-size: 36px; }
+.wish-text { color:#6b3a4a; font-size: 18px; margin: 10px 0 22px; }
+
+/* slideshow */
+.slideshow-wrap { display:flex; justify-content:center; margin-bottom: 24px; }
+.slideshow {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* videos */
+.videos { display:flex; flex-direction:column; gap:20px; align-items:center; }
+.video-wrap { width: 100%; display:flex; justify-content:center; }
+.video-player {
+  width: 80%;
+  max-width: 720px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .wish-card { padding: 18px; }
+  .slideshow { width: 220px; height: 220px; }
+  .video-player { width: 95%; }
+  .wish-card h1 { font-size: 26px; }
+}
